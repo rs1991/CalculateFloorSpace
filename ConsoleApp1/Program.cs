@@ -8,7 +8,16 @@ namespace ConsoleApp1 // Note: actual namespace depends on the project name.
         {
 
             //Cost to cover specified area by length and width
-            double length, width, unit_price, total_price, total_area, hourly_labour = 86.00;
+            double length,
+                width,
+                unit_price,
+                total_price, 
+                total_area, 
+                hourly_cost = 86,
+                maximum_flooring_per_hour = 20,
+                material_costs;
+
+            
             Console.WriteLine(" Please enter the length : ");
             length = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Please enter the width : ");
@@ -16,15 +25,13 @@ namespace ConsoleApp1 // Note: actual namespace depends on the project name.
             Console.WriteLine("Enter the cost per unit : ");
             unit_price = Convert.ToDouble(Console.ReadLine());
 
-            total_price = length * width * unit_price;
-            Console.WriteLine("The total cost is: " + total_price);
-           
-            total_area = length * width;
-            Console.WriteLine("The total area is: " + total_area);
+            total_area = length * width; //100
+            material_costs = unit_price * total_area; // 15*100 = 1500
+            //Console.WriteLine("The total cost is $: " + total_price);
+
+            total_price = total_area / maximum_flooring_per_hour * hourly_cost + material_costs;
+            Console.WriteLine("The total price is $: " + total_price);
             Console.ReadKey();
-
-
-            
 
         }
     }
