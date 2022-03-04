@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ConsoleApp1 // Note: actual namespace depends on the project name.
+namespace CalculateFloorSpace 
 {
     internal class Program
     {
@@ -25,9 +25,9 @@ namespace ConsoleApp1 // Note: actual namespace depends on the project name.
             Console.WriteLine("Enter the cost per unit : ");
             unit_price = Convert.ToDouble(Console.ReadLine());
 
-            total_area = length * width; //100
-            material_costs = unit_price * total_area; // 15*100 = 1500
-            //Console.WriteLine("The total cost is $: " + total_price);
+            total_area = length * width; 
+            material_costs = unit_price * total_area; 
+            
 
             total_price = total_area / maximum_flooring_per_hour * hourly_cost + material_costs;
             Console.WriteLine("The total price is $: " + total_price);
