@@ -16,17 +16,11 @@ namespace CalculateFloorSpace
                 hourly_cost = 86,
                 maximum_flooring_per_hour = 20,
                 material_costs,
-                circle_floor,
-                triangle_floor,
-                pi = 3.14,
+                pi = Math.PI,
                 radius, triangle_base, triangle_height;
-
             
-
-            Console.WriteLine("Please choose floor type: ");
-            Console.Write("Choose floor type: circle, wl, triangle: ");
+            Console.WriteLine("Choose floor type: circle, wl, triangle: ");
             String floor_type = Console.ReadLine();
-
 
 
             if (floor_type == "wl")
