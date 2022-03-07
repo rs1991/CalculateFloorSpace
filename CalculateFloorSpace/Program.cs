@@ -4,17 +4,13 @@ namespace CalculateFloorSpace
 {
     internal class Program
     {
-   
         static void Main(string[] args)
         {
+            double unit_price, total_price = 0, total_area = 0, hourly_cost = 86,
+            maximum_flooring_per_hour = 20, material_costs = 0, pi = Math.PI,
+            triangle_base, triangle_height;
 
-            //Cost to cover specified area by length and width
-            double length, width, unit_price, total_price=0, total_area,
-                hourly_cost = 86, maximum_flooring_per_hour = 20, material_costs, pi = Math.PI,
-                radius, triangle_base, triangle_height;
-                
-            string floor_type;    
-
+            string floor_type;
 
             Console.WriteLine("Please choose your floor type: 'c' circle, 'r' rectangle, 't' triangle: ");
             floor_type = Console.ReadLine();
@@ -23,9 +19,9 @@ namespace CalculateFloorSpace
             if (floor_type == "r")
             {
                 Console.WriteLine(" Please enter the length : ");
-                length = Convert.ToDouble(Console.ReadLine());
+                float length = float.Parse(Console.ReadLine());
                 Console.WriteLine("Please enter the width : ");
-                width = Convert.ToDouble(Console.ReadLine());
+                float width = float.Parse(Console.ReadLine());
                 Console.WriteLine("Enter the cost per unit : ");
                 unit_price = Convert.ToDouble(Console.ReadLine());
 
@@ -37,7 +33,7 @@ namespace CalculateFloorSpace
             if (floor_type == "c")
             {
                 Console.WriteLine(" Please enter the radius: ");
-                radius = Convert.ToDouble(Console.ReadLine());
+                float radius = float.Parse(Console.ReadLine());
                 Console.WriteLine("Enter the cost per unit : ");
                 unit_price = Convert.ToDouble(Console.ReadLine());
 
