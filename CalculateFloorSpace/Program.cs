@@ -38,7 +38,7 @@ namespace CalculateFloorSpace
                 Console.WriteLine("The total price is $: " + total_price);
                 Console.ReadKey();
             }
-            else if (floor_type == "circle")
+            if (floor_type == "circle")
             {
                 Console.WriteLine(" Please enter the radius: ");
                 radius = Convert.ToDouble(Console.ReadLine());
@@ -51,7 +51,7 @@ namespace CalculateFloorSpace
                 Console.WriteLine("The total price is $: " + total_price);
                 Console.ReadKey();
             }
-            else if (floor_type == "triangle")
+            if (floor_type == "triangle")
              { 
                 Console.WriteLine("Please enter the base");
                 triangle_base = Convert.ToDouble(Console.ReadLine());
