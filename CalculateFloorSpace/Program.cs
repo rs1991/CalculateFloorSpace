@@ -6,56 +6,51 @@ namespace CalculateFloorSpace
     {
         static void Main(string[] args)
         {
-            double unit_price, total_price = 0, total_area = 0, hourly_cost = 86,
-            maximum_flooring_per_hour = 20, material_costs = 0, pi = Math.PI,
-            triangle_base, triangle_height;
+            double unitPrice, total = 0, totalArea = 0, hourlyCost = 86,
+            maximumFlooringPerHour = 20, materialCosts = 0, pi = Math.PI,
+            triangleBase, triangleHeight;
 
-            string floor_type;
+            string floorType;
 
-            Console.WriteLine("Please choose your floor type: 'c' circle, 'r' rectangle, 't' triangle: ");
-            floor_type = Console.ReadLine();
-            
+            Console.WriteLine("Please choose your floor type: 'C' circle, 'R' rectangle, 'T' triangle: ");
+            floorType = Console.ReadLine().ToUpper();
 
-            if (floor_type == "r")
+
+            if (floorType == "R")
             {
                 Console.WriteLine(" Please enter the length : ");
                 float length = float.Parse(Console.ReadLine());
                 Console.WriteLine("Please enter the width : ");
                 float width = float.Parse(Console.ReadLine());
-                Console.WriteLine("Enter the cost per unit : ");
-                unit_price = Convert.ToDouble(Console.ReadLine());
+                totalArea = length * width;
 
-                total_area = length * width;
-                material_costs = unit_price * total_area;
-                total_price = total_area / maximum_flooring_per_hour * hourly_cost + material_costs;
             }
 
-            if (floor_type == "c")
+            if (floorType == "C")
             {
                 Console.WriteLine(" Please enter the radius: ");
                 float radius = float.Parse(Console.ReadLine());
-                Console.WriteLine("Enter the cost per unit : ");
-                unit_price = Convert.ToDouble(Console.ReadLine());
+                totalArea = pi * radius * radius;
 
-                total_area = pi * radius * radius;
-                material_costs = unit_price * total_area;
-                total_price = total_area / maximum_flooring_per_hour * hourly_cost + material_costs;    
             }
-            if (floor_type == "t")
+            if (floorType == "t")
             {
                 Console.WriteLine("Please enter the base");
-                triangle_base = Convert.ToDouble(Console.ReadLine());
+                triangleBase = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine("Please enter the height");
-                triangle_height = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("Enter the cost per unit : ");
-                unit_price = Convert.ToDouble(Console.ReadLine());
+                triangleHeight = Convert.ToDouble(Console.ReadLine());
 
-                total_area = triangle_base * triangle_height / 2;
-                material_costs = unit_price * total_area;
-                total_price = total_area / maximum_flooring_per_hour * hourly_cost + material_costs;
+                totalArea = triangleBase * triangleHeight / 2;
+
 
             }
-            Console.WriteLine("Total price $ " + total_price);
+            Console.WriteLine("Enter the cost per unit : ");
+            unitPrice = Convert.ToDouble(Console.ReadLine());
+
+            materialCosts = unitPrice * totalArea;
+            total = totalArea / maximumFlooringPerHour * hourlyCost + materialCosts;
+
+            Console.WriteLine("Total price $ " + total);
             Console.ReadKey();
         }
     }
